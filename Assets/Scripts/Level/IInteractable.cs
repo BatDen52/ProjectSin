@@ -1,5 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
-
 public interface IInteractable
 {
     public bool IsLock { get; }

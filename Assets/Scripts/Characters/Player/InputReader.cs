@@ -19,7 +19,7 @@ public class InputReader : MonoBehaviour, IInputReader
         if (Input.GetKeyDown(KeyCode.W))
             _isJump = true;
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
             _isInterect = true;
 
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())

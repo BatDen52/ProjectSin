@@ -19,7 +19,7 @@ public abstract class Interactable : MonoBehaviour, IInteractable
         if (_lock == null || _lock.Key == null)
             _isLock = false;
 
-        _lock.gameObject.SetActive(_isLock);
+        _lock?.gameObject.SetActive(_isLock);
     }
 
     public virtual void Interact()

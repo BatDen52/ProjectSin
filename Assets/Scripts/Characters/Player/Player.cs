@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Attacker), typeof(PlayerSound), typeof(Mover))]
-[RequireComponent(typeof(PlayerAnimator), typeof(CollisionHandler))]
+[RequireComponent(typeof(PlayerAnimator), typeof(CollisionHandler), typeof(PlayerLight))]
 public class Player : Character
 {
     //[SerializeField] private PlayerAnimationEvent _animationEvent;
@@ -16,6 +16,7 @@ public class Player : Character
     private Attacker _attacker;
     private CollisionHandler _collisionHandler;
     //private PlayerSound _audio;
+    private PlayerLight _playerLight;
 
     //private Inventory _inventory;
 
@@ -28,6 +29,7 @@ public class Player : Character
         //_animator = GetComponent<PlayerAnimator>();
         _attacker = GetComponent<Attacker>();
         _collisionHandler = GetComponent<CollisionHandler>();
+        _playerLight = GetComponent<PlayerLight>();
         //_audio = GetComponent<PlayerSound>();
 
         //_inventory = new Inventory();
@@ -68,7 +70,7 @@ public class Player : Character
         if (TimeManager.IsPaused)
             return;
 
-       // _animator.SetSpeedX(_inputReader.Direction);
+        // _animator.SetSpeedX(_inputReader.Direction);
 
         if (_inputReader.Direction != 0)
         {
@@ -76,7 +78,7 @@ public class Player : Character
             Fliper.LookAtTarget(View.transform.position + Vector3.right * _inputReader.Direction);
 
             //if (_groundDetector.IsGround)
-                //_audio.PlayStepSpund();
+            //_audio.PlayStepSpund();
         }
 
         if (_inputReader.GetIsJump() && _groundDetector.IsGround)
@@ -88,27 +90,27 @@ public class Player : Character
         if (_inputReader.GetIsAttack() && _attacker.CanAttack)
         {
             _attacker.StartAttack();
-         //   _animator.SetAttackTrigger();
+            //   _animator.SetAttackTrigger();
             //_audio.PlayAttackSpund();
         }
 
         if (_inputReader.GetIsInteract() && _interactable != null)
         {
-            //if (_interactable.IsLock)
-            //{
-            //    if (_inventory.Contains(_interactable.Key))
-            //    {
-            //        _interactable.Unlock((Key)_inventory.Take(_interactable.Key));
-            //    }
-            //    else
-            //    {
-            //        _interactable.Interact();
-            //    }
-            //}
-            //else
-            //{
-                _interactable.Interact();
-            //}
+            if (_interactable.IsLock)
+            {
+                //if (_inventory.Contains(_interactable.Key))
+                //{
+                //    _interactable.Unlock((Key)_inventory.Take(_interactable.Key));
+                //}
+                //else
+                {
+                    Interact();
+                }
+            }
+            else
+            {
+                Interact();
+            }
         }
     }
 
@@ -156,5 +158,15 @@ public class Player : Character
     {
         ApplyDamage();
         Debug.Log("TakeDamage");
+    }
+
+    private void Interact()
+    {
+        if ((_interactable as Interactable).TryGetComponent<SoulsLight>(out _))
+        {
+            _playerLight.StartShow();
+        }
+
+        _interactable.Interact();
     }
 }
