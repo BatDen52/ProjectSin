@@ -16,6 +16,6 @@ public class FalledLetter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<DeadZone>(out _))
-            Falled.Invoke(this);
+            Falled?.Invoke(this);
     }
 }
