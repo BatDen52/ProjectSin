@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7483082628793780477}
   - component: {fileID: 1975601434672064615}
   m_Layer: 8
-  m_Name: "Falled\u0410"
+  m_Name: "Falled\u0421"
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0410"
+  m_text: "\u0421"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3af16e9a7272a848b47d59abeb1a4ca, type: 2}
   m_sharedMaterial: {fileID: -5712344396932325031, guid: f3af16e9a7272a848b47d59abeb1a4ca, type: 2}
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3
+  m_fontSize: 2.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.16167915, y: 0, z: -0.033667445, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -181,14 +181,39 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.18314886, y: 1.1340123}
-      - {x: -0.19953048, y: 1.1470168}
-      - {x: -1.0109838, y: -0.77998984}
-      - {x: -0.5765386, y: -0.7720108}
-      - {x: -0.4022076, y: -0.36206555}
-      - {x: 0.42178953, y: -0.35343933}
-      - {x: 0.5910548, y: -0.7934711}
-      - {x: 1.0112954, y: -0.77288795}
+    - - {x: 0.74616987, y: 1.0696862}
+      - {x: 0.94277793, y: 0.9099491}
+      - {x: 0.68987924, y: 0.60893893}
+      - {x: 0.4620006, y: 0.76423323}
+      - {x: 0.22218731, y: 0.8178877}
+      - {x: -0.045667294, y: 0.80402464}
+      - {x: -0.25597185, y: 0.6706623}
+      - {x: -0.40592104, y: 0.44747153}
+      - {x: -0.4467354, y: 0.19519757}
+      - {x: -0.40014228, y: -0.043389916}
+      - {x: -0.29709423, y: -0.24136107}
+      - {x: -0.095314436, y: -0.40258744}
+      - {x: 0.2084792, y: -0.4497312}
+      - {x: 0.4295248, y: -0.3885414}
+      - {x: 0.5648602, y: -0.30116677}
+      - {x: 0.6907788, y: -0.20042911}
+      - {x: 0.97102535, y: -0.51061684}
+      - {x: 0.8175077, y: -0.64662504}
+      - {x: 0.5691298, y: -0.78695565}
+      - {x: 0.17900485, y: -0.8637548}
+      - {x: -0.10082579, y: -0.82708216}
+      - {x: -0.39038002, y: -0.7202139}
+      - {x: -0.639339, y: -0.514572}
+      - {x: -0.8218181, y: -0.2700899}
+      - {x: -0.89030486, y: 0.007483527}
+      - {x: -0.90678567, y: 0.2957896}
+      - {x: -0.8119608, y: 0.6557617}
+      - {x: -0.5751467, y: 0.97872484}
+      - {x: -0.40700036, y: 1.0965616}
+      - {x: -0.27603996, y: 1.1470168}
+      - {x: -0.17284656, y: 1.1897486}
+      - {x: 0.08597134, y: 1.2394145}
+      - {x: 0.51637834, y: 1.1852707}
   m_UseDelaunayMesh: 0
 --- !u!50 &7483082628793780477
 Rigidbody2D:
