@@ -14,6 +14,8 @@ public class PlayerLight : MonoBehaviour
 
     private Coroutine _coroutine;
 
+    public bool IsOn { get; private set; }
+
     public void StartShow()
     {
         if (_coroutine != null)
@@ -32,15 +34,17 @@ public class PlayerLight : MonoBehaviour
 
     private IEnumerator Showing()
     {
-        float startOuter= _light.pointLightOuterRadius;
+        float startOuter = _light.pointLightOuterRadius;
         float startInner = _light.pointLightInnerRadius;
         float time = 0;
+
+        IsOn = true;
 
         while (_light.pointLightOuterRadius != _showValueOuter || _light.pointLightInnerRadius != _showValueInner)
         {
             time += Time.deltaTime;
-            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, _showValueOuter, time);
-            _light.pointLightInnerRadius = Mathf.Lerp(startInner, _showValueInner, time);
+            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, _showValueOuter, time / _showTime);
+            _light.pointLightInnerRadius = Mathf.Lerp(startInner, _showValueInner, time / _showTime);
 
             yield return null;
         }
@@ -52,12 +56,14 @@ public class PlayerLight : MonoBehaviour
         float startInner = _light.pointLightInnerRadius;
         float time = 0;
 
+        IsOn = false;
+
         while (_light.pointLightOuterRadius != _hideValueOuter || _light.pointLightInnerRadius != _hideValueInner)
         {
             time += Time.deltaTime;
 
-            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, _hideValueOuter, time);
-            _light.pointLightInnerRadius = Mathf.Lerp(startInner, _hideValueInner, time);
+            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, _hideValueOuter, time / _hideTime);
+            _light.pointLightInnerRadius = Mathf.Lerp(startInner, _hideValueInner, time / _hideTime);
 
             yield return null;
         }
