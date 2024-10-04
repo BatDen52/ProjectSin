@@ -35,7 +35,7 @@ public abstract class Character : MonoBehaviour
         Health.Died -= OnDied;
     }
 
-    public void ApplyDamage(int damage)
+    public void ApplyDamage(int damage = 1)
     {
         Health.ApplyDamage(damage);
     }

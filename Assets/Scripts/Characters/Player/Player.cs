@@ -40,6 +40,7 @@ public class Player : Character
         _collisionHandler.InteractableFounded += OnInteractableFounded;
         _collisionHandler.MedKitFounded += OnMedKitFounded;
         _collisionHandler.KeyFounded += OnKeyFounded;
+        _collisionHandler.TakedDamage += TakeDamage;
         //_animationEvent.DealingDamage += _attacker.Attack;
         //_animationEvent.AttackEnded += _attacker.OnAttackEnded;
 
@@ -54,6 +55,7 @@ public class Player : Character
         _collisionHandler.InteractableFounded -= OnInteractableFounded;
         _collisionHandler.MedKitFounded -= OnMedKitFounded;
         _collisionHandler.KeyFounded -= OnKeyFounded;
+        _collisionHandler.TakedDamage -= TakeDamage;
         //_animationEvent.DealingDamage -= _attacker.Attack;
         //_animationEvent.AttackEnded -= _attacker.OnAttackEnded;
 
@@ -148,5 +150,11 @@ public class Player : Character
     {
         _inventoryView.Add(item);
         item.Collect();
+    }
+
+    private void TakeDamage()
+    {
+        ApplyDamage();
+        Debug.Log("TakeDamage");
     }
 }
