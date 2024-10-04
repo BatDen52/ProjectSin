@@ -6,6 +6,7 @@ public class CollisionHandler : MonoBehaviour
     public event Action<IInteractable> InteractableFounded;
     public event Action<MedKit> MedKitFounded;
     public event Action<Key> KeyFounded;
+    public event Action<LightBonus> BonusFounded;
     public event Action TakedDamage;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,6 +21,9 @@ public class CollisionHandler : MonoBehaviour
 
         if (collision.TryGetComponent(out Key key))
             KeyFounded?.Invoke(key);
+
+        if (collision.TryGetComponent(out LightBonus bonus))
+            BonusFounded?.Invoke(bonus);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
