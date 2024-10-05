@@ -12,7 +12,7 @@ public class Player : Character
 
     private IInputReader _inputReader;
     private Mover _mover;
-    //private PlayerAnimator _animator;
+    private PlayerAnimator _animator;
     private Attacker _attacker;
     private CollisionHandler _collisionHandler;
     //private PlayerSound _audio;
@@ -26,7 +26,7 @@ public class Player : Character
     {
         base.Awake();
         _mover = GetComponent<Mover>();
-        //_animator = GetComponent<PlayerAnimator>();
+        _animator = GetComponent<PlayerAnimator>();
         _attacker = GetComponent<Attacker>();
         _collisionHandler = GetComponent<CollisionHandler>();
         _playerLight = GetComponent<PlayerLight>();
@@ -70,7 +70,7 @@ public class Player : Character
         if (TimeManager.IsPaused)
             return;
 
-        // _animator.SetSpeedX(_inputReader.Direction);
+        _animator.SetSpeedX(_inputReader.Direction);
 
         if (_inputReader.Direction != 0)
         {

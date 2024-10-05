@@ -14,6 +14,9 @@ public class Fliper : MonoBehaviour
 
     public void LookAtTarget(Vector2 targetPosition)
     {
+        Debug.Log(_target.name + " " + ((_target.position.x < targetPosition.x && IsTurnRight == false)
+           || (_target.position.x > targetPosition.x && IsTurnRight)));
+
         if ((_target.position.x < targetPosition.x && IsTurnRight == false)
            || (_target.position.x > targetPosition.x && IsTurnRight))
         {
