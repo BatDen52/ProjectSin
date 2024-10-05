@@ -632,6 +632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1935591743}
   _endFallTrigger: {fileID: 1980387640}
+  _grany1: {fileID: 0}
+  _wall: {fileID: 0}
 --- !u!61 &152001885
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1373,8 +1375,8 @@ Transform:
   m_GameObject: {fileID: 780185948}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8832998, y: -2.0111034, z: -0.00144567}
-  m_LocalScale: {x: 72.207535, y: 0.6264, z: 1}
+  m_LocalPosition: {x: 16.2089, y: -2.0111034, z: -0.00144567}
+  m_LocalScale: {x: 96.86021, y: 0.6264, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1776413904}
@@ -3294,6 +3296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pictures: []
   _fallTrigger: {fileID: 152001884}
+  _wall: {fileID: 0}
 --- !u!61 &1192367109
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5666,7 +5669,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1935591743}
   _lettersPlatform: {fileID: 1396471350}
-  _grany1: {fileID: 252374520}
   _lightRunAway1Trigget: {fileID: 1532200658}
 --- !u!61 &1980387641
 BoxCollider2D:
@@ -6389,6 +6391,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.16400707
       objectReference: {fileID: 0}
+    - target: {fileID: 5087695293220070875, guid: 653e15e67dede0c48bfacfb4da98da18, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 1692454020}
     - target: {fileID: 5592737074970553602, guid: 653e15e67dede0c48bfacfb4da98da18, type: 3}
       propertyPath: m_Follow
       value: 
