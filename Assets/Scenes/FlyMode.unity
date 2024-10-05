@@ -761,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bonusPrefab: {fileID: 4569445386405447510, guid: c89d227ea5615aa44b64ca309a75c244, type: 3}
-  _bonusChance: 20
+  _bonusChance: 80
   _points:
   - {fileID: 1813748260}
   - {fileID: 708514366}
