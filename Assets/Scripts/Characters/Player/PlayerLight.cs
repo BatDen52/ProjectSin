@@ -15,6 +15,7 @@ public class PlayerLight : MonoBehaviour
     private Coroutine _coroutine;
 
     public bool IsOn { get; private set; }
+    public float Intensity => _light.intensity;
 
     public void StartShow()
     {
@@ -24,12 +25,20 @@ public class PlayerLight : MonoBehaviour
         _coroutine = StartCoroutine(Showing());
     }
 
-    public void StartHide()
+    public void StartHide(float hideTime = -1)
     {
+        if (hideTime == -1)
+            hideTime = _hideTime;
+
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
-        _coroutine = StartCoroutine(Hideing());
+        _coroutine = StartCoroutine(Hideing(hideTime));
+    }
+
+    public void SetIntensity(float intensity)
+    {
+        _light.intensity = intensity;
     }
 
     private IEnumerator Showing()
@@ -50,7 +59,7 @@ public class PlayerLight : MonoBehaviour
         }
     }
 
-    private IEnumerator Hideing()
+    private IEnumerator Hideing(float hideTime)
     {
         float startOuter = _light.pointLightOuterRadius;
         float startInner = _light.pointLightInnerRadius;
@@ -62,8 +71,8 @@ public class PlayerLight : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, _hideValueOuter, time / _hideTime);
-            _light.pointLightInnerRadius = Mathf.Lerp(startInner, _hideValueInner, time / _hideTime);
+            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, _hideValueOuter, time / hideTime);
+            _light.pointLightInnerRadius = Mathf.Lerp(startInner, _hideValueInner, time / hideTime);
 
             yield return null;
         }

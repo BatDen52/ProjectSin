@@ -59,9 +59,9 @@ public class LettersSpawner : MonoBehaviour
 
     private FalledLetter GetLetter()
     {
-        FalledLetter letter = _letters.FirstOrDefault(i => i.gameObject.activeInHierarchy == false);
+        FalledLetter letter;//= _letters.FirstOrDefault(i => i.gameObject.activeInHierarchy == false);
 
-        if (letter == null)
+        //if (letter == null)
         {
             letter = Instantiate(_prefabs[Random.Range(0, _prefabs.Length)], _container.transform);
             _letters.Add(letter);

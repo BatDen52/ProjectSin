@@ -13,6 +13,7 @@ public class LightRunAway2Trigger : MonoBehaviour
     [SerializeField] private GameObject[] _walls;
     [SerializeField] private Vector3 _granyEndPosition;
     [SerializeField] private GameObject _platform1Container;
+    [SerializeField] private GranyAttackTrigger _granyTrigger;
 
     private Vector3 _granyStartPosition;
     private SoulsLight _light;
@@ -49,10 +50,12 @@ public class LightRunAway2Trigger : MonoBehaviour
     private void OnCollected()
     {
         _light.Collected -= OnCollected;
-        _platform1Container.SetActive(false);
+       // _platform1Container.SetActive(false);
 
         foreach (var wall in _walls)
             wall.SetActive(false);
+
+        _granyTrigger.gameObject.SetActive(true);
     }
 
     private IEnumerator Runing(Transform light, Vector3 endPosition, float speed)
