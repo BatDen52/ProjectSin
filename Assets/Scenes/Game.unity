@@ -632,6 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1935591743}
   _endFallTrigger: {fileID: 1980387640}
+  _grany1: {fileID: 252374520}
   _wall: {fileID: 1846137371}
 --- !u!61 &152001885
 BoxCollider2D:
@@ -6833,7 +6834,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1935591743}
   _lettersPlatform: {fileID: 1396471350}
-  _grany1: {fileID: 252374520}
   _lightRunAway1Trigget: {fileID: 1532200658}
 --- !u!61 &1980387641
 BoxCollider2D:
@@ -7813,6 +7813,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3926041435507749706, guid: 653e15e67dede0c48bfacfb4da98da18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1630001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972542917124357289, guid: 653e15e67dede0c48bfacfb4da98da18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1630001
+      objectReference: {fileID: 0}
     - target: {fileID: 5592737074970553602, guid: 653e15e67dede0c48bfacfb4da98da18, type: 3}
       propertyPath: m_Follow
       value: 
@@ -7848,7 +7856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2251726569977208560, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.06
+      value: -1.223
       objectReference: {fileID: 0}
     - target: {fileID: 2251726569977208560, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7885,6 +7893,14 @@ PrefabInstance:
     - target: {fileID: 3329794793175770375, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5990415804721641973, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5990415804721641973, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
+      propertyPath: m_Size.y
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 8621609397092173237, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
       propertyPath: m_Camera
