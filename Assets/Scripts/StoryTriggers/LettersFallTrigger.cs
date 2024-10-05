@@ -7,7 +7,11 @@ public class LettersFallTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.TryGetComponent<Player>(out _) == false)
+            return;
+
         _spawner.StartSpawn();
         _endFallTrigger.gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

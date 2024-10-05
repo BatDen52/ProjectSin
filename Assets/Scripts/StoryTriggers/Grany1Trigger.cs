@@ -10,6 +10,9 @@ public class Grany1Trigger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.TryGetComponent<Player>(out _) == false)
+            return;
+
         _text.gameObject.SetActive (true);
         _picture1.gameObject.SetActive (false);
         _fallTrigger.gameObject.SetActive (true);

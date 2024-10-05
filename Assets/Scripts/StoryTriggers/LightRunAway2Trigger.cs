@@ -3,17 +3,16 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class LightRunAway1Trigger : MonoBehaviour
+public class LightRunAway2Trigger : MonoBehaviour
 {
     [SerializeField] private PlayerLight _playerLight;
     [SerializeField] private SoulsLight _soulsLightPrefab;
     [SerializeField] private Transform _soulsLightEndPoint;
     [SerializeField] private float _speedLight;
     [SerializeField] private RectTransform _uiGrany;
+    [SerializeField] private GameObject[] _walls;
     [SerializeField] private Vector3 _granyEndPosition;
     [SerializeField] private GameObject _platform1Container;
-    [SerializeField] private GameObject[] _walls;
-    [SerializeField] private LightRunAway2Trigger _lightRunAway2Trigget;
 
     private Vector3 _granyStartPosition;
     private SoulsLight _light;
@@ -51,7 +50,6 @@ public class LightRunAway1Trigger : MonoBehaviour
     {
         _light.Collected -= OnCollected;
         _platform1Container.SetActive(false);
-        _lightRunAway2Trigget.gameObject.SetActive(true);
 
         foreach (var wall in _walls)
             wall.SetActive(false);
