@@ -39,12 +39,12 @@ public class LightRunAway1Trigger : MonoBehaviour
 
         _light.GetComponent<Collider2D>().enabled = false;
 
+        _uiGrany.DOAnchorPos(_granyStartPosition, 1)
+            .OnComplete(() => _platform1Container.SetActive(true));
+
         yield return StartCoroutine(Runing(_light.transform, _soulsLightEndPoint.position, _speedLight));
 
         _light.GetComponent<Collider2D>().enabled = true;
-
-        _uiGrany.DOAnchorPos(_granyStartPosition, 1)
-            .OnComplete(() => _platform1Container.SetActive(true));
     }
 
     private void OnCollected()
