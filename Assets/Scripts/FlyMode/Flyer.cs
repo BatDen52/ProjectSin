@@ -1,12 +1,19 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CollisionHandler))]
 public class Flyer : MonoBehaviour
 {
+    [SerializeField] private Light2D _light;
     [SerializeField] private int _healthPoints;
+    [SerializeField] private int _neededScore = 6;
+    [SerializeField] private float _outerAdded = 0.5f;
+    [SerializeField] private float _innerAdded = 0.5f;
 
     private CollisionHandler _collisionHandler;
+    private int _score = 0;
 
     public event Action Died;
 
@@ -27,7 +34,7 @@ public class Flyer : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _healthPoints-= damage;
+        _healthPoints -= damage;
 
         if (_healthPoints <= 0)
             Died?.Invoke();
@@ -36,5 +43,13 @@ public class Flyer : MonoBehaviour
     public void OnBonusFounded(LightBonus bonus)
     {
         bonus.Collect();
+
+        _score++;
+
+        _light.pointLightOuterRadius += _outerAdded;
+        _light.pointLightInnerRadius += _innerAdded;
+
+        if (_score >= _neededScore)
+            SceneManager.LoadScene(0);
     }
 }

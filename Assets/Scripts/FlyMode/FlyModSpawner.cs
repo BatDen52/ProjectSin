@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FlyModSpawner : MonoBehaviour
 {
-    [SerializeField] private Asteroid _asteroidPrefab;
+    //[SerializeField] private Asteroid _asteroidPrefab;
     [SerializeField] private LightBonus _bonusPrefab;
     [SerializeField] private float _bonusChance;
     [SerializeField] private Transform[] _points;
@@ -26,8 +26,8 @@ public class FlyModSpawner : MonoBehaviour
 
             if (Random.Range(0, 100 + 1) <= _bonusChance)
                 Instantiate(_bonusPrefab, _points[Random.Range(0, _points.Length)]);
-            else 
-                Instantiate(_asteroidPrefab, _points[Random.Range(0, _points.Length)]);
+            //else 
+            //    Instantiate(_asteroidPrefab, _points[Random.Range(0, _points.Length)]);
         }
     }
 }

@@ -19,21 +19,24 @@ public class FlyerMover : MonoBehaviour
     {
         if (_direction == FlyDirection.X)
         {
-            if (Input.GetKeyDown(KeyCode.D) && _targetPosition.x < _maxCordinate)
-                _targetPosition.x += _step;
-            else if (Input.GetKeyDown(KeyCode.A) && _targetPosition.x > _minCordinate)
-                _targetPosition.x -= _step;
+            if (Input.GetKey(KeyCode.D) /*&& _targetPosition.x < _maxCordinate*/)
+                _targetPosition.x = _maxCordinate;
+            else if (Input.GetKey(KeyCode.A)/* && _targetPosition.x > _minCordinate*/)
+                _targetPosition.x = _minCordinate;
+            else
+                return;
         }
         else if (_direction == FlyDirection.Y)
         {
-            if (Input.GetKeyDown(KeyCode.W) && _targetPosition.x < _maxCordinate)
-                _targetPosition.y += _step;
-            else if (Input.GetKeyDown(KeyCode.S) && _targetPosition.x > _minCordinate)
-                _targetPosition.y -= _step;
+            if (Input.GetKey(KeyCode.W) /*&& _targetPosition.x < _maxCordinate*/)
+                _targetPosition.y = _maxCordinate;
+            else if (Input.GetKey(KeyCode.S) /*&& _targetPosition.x > _minCordinate*/)
+                _targetPosition.y = _minCordinate;
+            else
+                return;
         }
 
-        if (transform.position != _targetPosition)
-            transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
     }
 }
 
