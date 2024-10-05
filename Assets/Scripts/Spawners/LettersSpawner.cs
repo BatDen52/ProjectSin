@@ -41,6 +41,12 @@ public class LettersSpawner : MonoBehaviour
         _coroutine = StartCoroutine(Spawning());
     }
 
+    public void StopSpawn()
+    {
+        if (_coroutine != null)
+            StopCoroutine(_coroutine);
+    }
+
     private IEnumerator Spawning()
     {
         while (enabled)
