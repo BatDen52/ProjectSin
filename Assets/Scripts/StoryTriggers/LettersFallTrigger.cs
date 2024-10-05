@@ -4,6 +4,7 @@ public class LettersFallTrigger : MonoBehaviour
 {
     [SerializeField] private LettersSpawner _spawner;
     [SerializeField] private EndLettersFallTrigger _endFallTrigger;
+    [SerializeField] private GameObject _wall;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,5 +14,6 @@ public class LettersFallTrigger : MonoBehaviour
         _spawner.StartSpawn();
         _endFallTrigger.gameObject.SetActive(true);
         gameObject.SetActive(false);
+        _wall.gameObject.SetActive(true);
     }
 }
