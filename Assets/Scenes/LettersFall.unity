@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 42350217}
   - component: {fileID: 42350218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 218651655}
   - component: {fileID: 218651656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 447065078}
   - component: {fileID: 447065076}
   - component: {fileID: 447065077}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: GrundDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1545,7 +1545,7 @@ GameObject:
   - component: {fileID: 729549817}
   - component: {fileID: 729549818}
   - component: {fileID: 729549819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1825,7 +1825,7 @@ GameObject:
   - component: {fileID: 788268480}
   - component: {fileID: 788268481}
   - component: {fileID: 788268482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3260,7 +3260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1045315195}
   - component: {fileID: 1045315196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6421,7 +6421,7 @@ GameObject:
   - component: {fileID: 1966979924}
   - component: {fileID: 1966979923}
   - component: {fileID: 1966979922}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}

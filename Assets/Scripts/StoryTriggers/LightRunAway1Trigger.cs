@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class LightRunAway1Trigger : MonoBehaviour
     [SerializeField] private GameObject _platform1Container;
 
     private Vector3 _granyStartPosition;
+    private SoulsLight _light;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,25 +26,29 @@ public class LightRunAway1Trigger : MonoBehaviour
     private IEnumerator RunAway()
     {
         _playerLight.StartHide();
-        SoulsLight light = Instantiate(_soulsLightPrefab, _playerLight.transform.position, Quaternion.identity);
-        light.GetComponent<Collider2D>().enabled = false;
+        _light = Instantiate(_soulsLightPrefab, _playerLight.transform.position, Quaternion.identity);
+        _light.Collected += OnCollected;
 
-        yield return StartCoroutine(Runing(light.transform, _soulsLightEndPoint.position, _speedLight));
-        Debug.Log("333333333333");
+        _light.GetComponent<Collider2D>().enabled = false;
 
-        light.GetComponent<Collider2D>().enabled = true;
+        yield return StartCoroutine(Runing(_light.transform, _soulsLightEndPoint.position, _speedLight));
 
-        Debug.Log("4444444");
+        _light.GetComponent<Collider2D>().enabled = true;
+
         _uiGrany.DOAnchorPos(_granyStartPosition, 1)
             .OnComplete(() => _platform1Container.SetActive(true));
     }
 
+    private void OnCollected()
+    {
+        _light.Collected -= OnCollected;
+        _platform1Container.SetActive(false);
+    }
+
     private IEnumerator Runing(Transform light, Vector3 endPosition, float speed)
     {
-        Debug.Log("111111111111");
         while (light.position != endPosition)
         {
-            Debug.Log("2222222222222");
             light.position = Vector3.MoveTowards(light.position, endPosition, speed * Time.deltaTime);
             yield return null;
         }

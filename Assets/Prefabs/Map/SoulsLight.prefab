@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6470169673144956709}
   - component: {fileID: 546105961088752543}
   - component: {fileID: 6946087717283610764}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SoulsLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5663224104896305583}
   - component: {fileID: 7035345307696707983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
