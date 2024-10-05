@@ -1,10 +1,9 @@
-using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class Grany1Trigger : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _text;
+    [SerializeField] private GameObject _text;
     [SerializeField] private LithingZone[] _oldPictures;
     [SerializeField] private LithingZone[] _newPictures;
     [SerializeField] private HidePicturesTrigger _hidePicturesTrigger;
