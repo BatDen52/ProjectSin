@@ -12,10 +12,23 @@ public class FlyModSpawner : MonoBehaviour
     private WaitForSeconds _wait;
     private Coroutine _coroutine;
 
+    public static FlyModSpawner Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         _wait = new WaitForSeconds(_delay);
         _coroutine = StartCoroutine(Spawning());
+    }
+
+    public void StopSpawning()
+    {
+        if (_coroutine != null)
+            StopCoroutine(_coroutine);
     }
 
     private IEnumerator Spawning()

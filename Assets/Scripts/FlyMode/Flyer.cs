@@ -1,4 +1,6 @@
+using DG.Tweening;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -50,6 +52,19 @@ public class Flyer : MonoBehaviour
         _light.pointLightInnerRadius += _innerAdded;
 
         if (_score >= _neededScore)
-            SceneManager.LoadScene(0);
+        {
+            _collisionHandler.enabled = false;
+            FlyModSpawner.Instance.StopSpawning();
+            StartCoroutine(EndLevel());
+        }
+    }
+
+    private IEnumerator EndLevel()
+    {
+        transform.DOMove(transform.position + Vector3.up * 20, 2.5f);
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene(0);
     }
 }
