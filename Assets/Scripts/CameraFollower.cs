@@ -8,19 +8,35 @@ public class CameraFollower : MonoBehaviour
 
     private Vector3 _offset;
 
+    public bool IsFollow { get; private set; } = true;
+
+    public static CameraFollower Instance;
+
     private void Awake()
     {
+        Instance = this;
         _offset = transform.position - _target.position;
     }
 
     private void LateUpdate()
     {
-        SmoothFollow();
+        if (IsFollow)
+            SmoothFollow();
     }
 
     public void SetTarget(Transform target)
     {
         _target = target;
+    }
+
+    public void Follow()
+    {
+        IsFollow = true;
+    }
+
+    public void StopFollow()
+    {
+        IsFollow = false;
     }
 
     private void SmoothFollow()

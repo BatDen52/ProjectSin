@@ -1,10 +1,13 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GranyAttackTrigger : MonoBehaviour
 {
     [SerializeField] private GranySpawner _granySpawner;
     [SerializeField] private PlayerLight _playerLight;
+    [SerializeField] private PlayerAnimator _playerAnimator;
     [SerializeField] private Canvas _interactableCanvas;
 
     [Header("Timer")]
@@ -59,5 +62,16 @@ public class GranyAttackTrigger : MonoBehaviour
         _granySpawner.PushAll(_playerLight.transform.position, _pushForce);
 
         _playerLight.StartShow();
+
+        yield return new WaitForSeconds(1.5f);
+
+        CameraFollower.Instance.StopFollow();
+        _playerAnimator.SetFly();
+        _playerAnimator.GetComponent<Rigidbody2D>().gravityScale = 0;
+        _playerAnimator.transform.DOMove(_playerAnimator.transform.position + Vector3.up * 12, 2);
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("FlyMode");
     }
 }
