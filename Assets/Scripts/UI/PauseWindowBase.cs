@@ -37,6 +37,6 @@ public abstract class PauseWindowBase : MonoBehaviour
 
     private void Exit()
     {
-        LoadScene(MAIN_MENU_SCENE_INDEX);
+        Application.Quit();
     }
 }
