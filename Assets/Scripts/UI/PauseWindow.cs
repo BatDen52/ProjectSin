@@ -11,6 +11,8 @@ public class PauseWindow : PauseWindowBase
         base.OnEnable();
 
         _continueButton.onClick.AddListener(Continue);
+
+        Cursor.visible = true;
     }
 
     protected override void OnDisable()
@@ -18,6 +20,8 @@ public class PauseWindow : PauseWindowBase
         base.OnDisable();
 
         _continueButton.onClick.RemoveListener(Continue);
+     
+        Cursor.visible = false;
     }
 
     private void Continue()

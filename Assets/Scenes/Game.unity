@@ -9249,18 +9249,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 252374521}
     m_Modifications:
-    - target: {fileID: 633864094371009638, guid: a3eae3d29bc5afc4b967f7b0af4248fb, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: f3af16e9a7272a848b47d59abeb1a4ca, type: 2}
-    - target: {fileID: 633864094371009638, guid: a3eae3d29bc5afc4b967f7b0af4248fb, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1627281603094939454, guid: a3eae3d29bc5afc4b967f7b0af4248fb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5578548479285468583, guid: a3eae3d29bc5afc4b967f7b0af4248fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9304,18 +9292,6 @@ PrefabInstance:
     - target: {fileID: 7231824742739053400, guid: a3eae3d29bc5afc4b967f7b0af4248fb, type: 3}
       propertyPath: m_Name
       value: Grany
-      objectReference: {fileID: 0}
-    - target: {fileID: 8966625242185384399, guid: a3eae3d29bc5afc4b967f7b0af4248fb, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -1.0738
-      objectReference: {fileID: 0}
-    - target: {fileID: 8966625242185384399, guid: a3eae3d29bc5afc4b967f7b0af4248fb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.0567
-      objectReference: {fileID: 0}
-    - target: {fileID: 8966625242185384399, guid: a3eae3d29bc5afc4b967f7b0af4248fb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
