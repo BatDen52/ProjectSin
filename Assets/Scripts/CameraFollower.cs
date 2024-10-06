@@ -6,9 +6,10 @@ public class CameraFollower : MonoBehaviour
     [SerializeField] private Transform _target;
     [SerializeField] private float _smoothCoefficient;
 
-    private Vector3 _offset;
+    [SerializeField] private Vector3 _offset;
 
     [field: SerializeField] public bool IsFollow { get; private set; } = true;
+    public Vector3 Offset => _offset;
 
     public static CameraFollower Instance;
 
@@ -37,6 +38,11 @@ public class CameraFollower : MonoBehaviour
     public void StopFollow()
     {
         IsFollow = false;
+    }
+
+    public void SetOffsetY(float offset)
+    {
+        _offset.y = offset;
     }
 
     private void SmoothFollow()
