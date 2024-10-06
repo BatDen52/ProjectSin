@@ -32,7 +32,7 @@ public abstract class PauseWindowBase : MonoBehaviour
 
     private void Restart()
     {
-        LoadScene(SceneManager.GetActiveScene().buildIndex);
+        LoadScene(0);
     }
 
     private void Exit()
