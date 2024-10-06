@@ -68,7 +68,7 @@ public class GranyAttackTrigger : MonoBehaviour
         CameraFollower.Instance.StopFollow();
         _playerAnimator.SetFly();
         _playerAnimator.GetComponent<Rigidbody2D>().gravityScale = 0;
-        _playerAnimator.transform.DOMove(_playerAnimator.transform.position + Vector3.up * 12, 2);
+        _playerAnimator.transform.DOMove(_playerAnimator.transform.position + Vector3.up * 20, 2);
 
         yield return new WaitForSeconds(3f);
 
