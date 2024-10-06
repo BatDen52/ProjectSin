@@ -8,7 +8,7 @@ public class CameraFollower : MonoBehaviour
 
     private Vector3 _offset;
 
-    public bool IsFollow { get; private set; } = true;
+    [field: SerializeField] public bool IsFollow { get; private set; } = true;
 
     public static CameraFollower Instance;
 

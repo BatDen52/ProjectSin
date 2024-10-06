@@ -65,6 +65,6 @@ public class Flyer : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("GameEnd");
     }
 }
