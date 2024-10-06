@@ -9,7 +9,7 @@ public class Pushing : MonoBehaviour
 
     private void Update()
     {
-        if (_isAutoPilot || Input.GetKey(KeyCode.O))
+        if (_isAutoPilot || Input.GetKey(KeyCode.E))
         {
             _animator.SetBool("Push", true);
             transform.Translate(Vector2.right * _speed * Time.deltaTime);

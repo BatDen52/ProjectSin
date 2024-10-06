@@ -16,16 +16,17 @@ public class ShowingO : MonoBehaviour
 
     private IEnumerator Show()
     {
-        yield return new WaitForSeconds(_showDelay);
-
         _pushing.enabled = true;
 
-        _tutorial.SetActive(true);
+        yield return new WaitForSeconds(_showDelay);
+
+        if (Input.GetKey(KeyCode.E) == false)
+            _tutorial.SetActive(true);
 
         CameraFollower.Instance.enabled = true;
         CameraFollower.Instance.Follow();
 
-        while (Input.GetKeyDown(KeyCode.O) == false)
+        while (Input.GetKey(KeyCode.E) == false)
             yield return null;
 
         yield return new WaitForSeconds(0.5f);

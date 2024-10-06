@@ -21,7 +21,7 @@ public class FlyerMover : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.D) /*&& _targetPosition.x < _maxCordinate*/)
                 _targetPosition.x = _maxCordinate;
-            else if (Input.GetKey(KeyCode.A)/* && _targetPosition.x > _minCordinate*/)
+            else if (Input.GetKey(KeyCode.O)/* && _targetPosition.x > _minCordinate*/)
                 _targetPosition.x = _minCordinate;
             else
                 return;
