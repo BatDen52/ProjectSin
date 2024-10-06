@@ -15,6 +15,14 @@ public class LettersSpawner : MonoBehaviour
 
     private Coroutine _coroutine;
     private List<FalledLetter> _letters = new();
+    private float _scaleCoefficient = 1;
+
+    public static LettersSpawner Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -47,6 +55,11 @@ public class LettersSpawner : MonoBehaviour
             StopCoroutine(_coroutine);
     }
 
+    public void UpCoefficient(float value)
+    {
+        _scaleCoefficient += value;
+    }
+
     private IEnumerator Spawning()
     {
         while (enabled)
@@ -76,6 +89,7 @@ public class LettersSpawner : MonoBehaviour
         position.x = Random.Range(_leftBrder.position.x, _rightBrder.position.x);
 
         letter.transform.SetPositionAndRotation(position, Quaternion.identity);
+        letter.transform.localScale = Vector3.one * _scaleCoefficient;
 
         letter.Falled += OnFalled;
         letter.Rigidbody.velocity = Vector3.zero;
