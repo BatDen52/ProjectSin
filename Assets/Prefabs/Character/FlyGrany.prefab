@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 38504423399507711}
   - component: {fileID: 6222085863329459482}
   - component: {fileID: 4501497038905464575}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FlyGrany
   m_TagString: Untagged
   m_Icon: {fileID: 0}

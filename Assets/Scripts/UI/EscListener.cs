@@ -4,6 +4,11 @@ public class EscListener : MonoBehaviour
 {
     [SerializeField] private PauseWindow _pauseWindow;
 
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
