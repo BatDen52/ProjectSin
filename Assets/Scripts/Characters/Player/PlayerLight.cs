@@ -5,10 +5,16 @@ using UnityEngine.Rendering.Universal;
 public class PlayerLight : MonoBehaviour
 {
     [SerializeField] private Light2D _light;
+
     [SerializeField] private float _showValueInner;
     [SerializeField] private float _showValueOuter;
+
     [SerializeField] private float _hideValueInner;
     [SerializeField] private float _hideValueOuter;
+
+    [SerializeField] private float _maxValueInner;
+    [SerializeField] private float _maxValueOuter;
+
     [SerializeField] private float _showTime;
     [SerializeField] private float _hideTime;
 
@@ -18,6 +24,17 @@ public class PlayerLight : MonoBehaviour
 
     public bool IsOn { get; private set; }
     public float Intensity => _light.intensity;
+
+    public float TargetValueInner
+    {
+        get => _targetValueInner;
+        set => _targetValueInner = Mathf.Clamp(value, 0, _maxValueInner);
+    }
+    public float TargetValueOuter
+    {
+        get => _targetValueOuter;
+        set => _targetValueOuter = Mathf.Clamp(value, 0, _maxValueOuter);
+    }
 
     public void StartShow(float showTime = -1, float targetValueInner = -1, float targetValueOuter = -1)
     {
@@ -35,8 +52,8 @@ public class PlayerLight : MonoBehaviour
 
         IsOn = true;
 
-        _targetValueInner += targetValueInner;
-        _targetValueOuter += targetValueOuter;
+        TargetValueInner += targetValueInner;
+        TargetValueOuter += targetValueOuter;
 
         _coroutine = StartCoroutine(ChangeValue(showTime));
     }
@@ -57,8 +74,8 @@ public class PlayerLight : MonoBehaviour
 
         IsOn = false;
 
-        _targetValueInner -= targetValueInner;
-        _targetValueOuter -= targetValueOuter;
+        TargetValueInner -= targetValueInner;
+        TargetValueOuter -= targetValueOuter;
 
         _coroutine = StartCoroutine(ChangeValue(hideTime));
     }
@@ -79,11 +96,11 @@ public class PlayerLight : MonoBehaviour
         float startInner = _light.pointLightInnerRadius;
         float time = 0;
 
-        while (_light.pointLightOuterRadius != _targetValueOuter || _light.pointLightInnerRadius != _targetValueInner)
+        while (_light.pointLightOuterRadius != TargetValueOuter || _light.pointLightInnerRadius != TargetValueInner)
         {
             time += Time.deltaTime;
-            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, _targetValueOuter, time / showTime);
-            _light.pointLightInnerRadius = Mathf.Lerp(startInner, _targetValueInner, time / showTime);
+            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, TargetValueOuter, time / showTime);
+            _light.pointLightInnerRadius = Mathf.Lerp(startInner, TargetValueInner, time / showTime);
 
             yield return null;
         }
