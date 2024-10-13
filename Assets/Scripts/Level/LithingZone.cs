@@ -9,18 +9,30 @@ public class LithingZone : MonoBehaviour
     [SerializeField] private float _hideIntensity;
     [SerializeField] private float _showTime;
     [SerializeField] private float _hideTime;
+    [SerializeField] private float _innetAdded;
+    [SerializeField] private float _outerAdded;
 
     private Coroutine _coroutine;
+    private bool _isUsed;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out PlayerLight playerLight) && playerLight.IsOn == true)
+        {
             StartShow();
+
+            if (_isUsed == false)
+            {
+                _isUsed = true;
+                playerLight.AddForce(_innetAdded, _outerAdded);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        StartHide();
+        if (collision.TryGetComponent(out PlayerLight playerLight))
+            StartHide();
     }
 
     public void StartShow()

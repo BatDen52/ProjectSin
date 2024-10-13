@@ -2096,6 +2096,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _innetAdded
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _outerAdded
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
       value: 0.15
@@ -2504,6 +2512,14 @@ PrefabInstance:
     - target: {fileID: 6052644120317395374, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _innetAdded
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _outerAdded
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -3231,6 +3247,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _innetAdded
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _outerAdded
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
       value: 0.18
@@ -3790,6 +3814,14 @@ PrefabInstance:
     - target: {fileID: 6052644120317395374, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _innetAdded
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _outerAdded
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -6608,6 +6640,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _innetAdded
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _outerAdded
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
       value: 0.12
@@ -6855,6 +6895,14 @@ PrefabInstance:
     - target: {fileID: 6052644120317395374, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _innetAdded
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _outerAdded
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -7684,7 +7732,6 @@ MonoBehaviour:
   _animator: {fileID: 1971302863}
   _plauerView: {fileID: 1958396724}
   _unlitMaterial: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
-  _blackIdleSkin: {fileID: 21300000, guid: a1735ccfeefcf412f86c1037714e1580, type: 3}
   _playerLight: {fileID: 1692454022}
   _soulsLightPrefab: {fileID: 546105961088752543, guid: b89b6608c39646e41878b01c918363d2, type: 3}
   _soulsLightEndPoint: {fileID: 531966502}
@@ -8542,6 +8589,14 @@ PrefabInstance:
     - target: {fileID: 6052644120317395374, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _innetAdded
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _outerAdded
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -10737,6 +10792,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _innetAdded
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _outerAdded
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapePath.Array.size
       value: 15
@@ -11522,6 +11585,14 @@ PrefabInstance:
     - target: {fileID: 6052644120317395374, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _innetAdded
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
+      propertyPath: _outerAdded
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_Intensity

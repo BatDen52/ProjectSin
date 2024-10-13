@@ -13,27 +13,54 @@ public class PlayerLight : MonoBehaviour
     [SerializeField] private float _hideTime;
 
     private Coroutine _coroutine;
+    private float _targetValueInner;
+    private float _targetValueOuter;
 
     public bool IsOn { get; private set; }
     public float Intensity => _light.intensity;
 
-    public void StartShow()
+    public void StartShow(float showTime = -1, float targetValueInner = -1, float targetValueOuter = -1)
     {
+        if (showTime == -1)
+            showTime = _showTime;
+
+        if (targetValueInner == -1)
+            targetValueInner = _showValueInner;
+
+        if (targetValueOuter == -1)
+            targetValueOuter = _showValueOuter;
+
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
-        _coroutine = StartCoroutine(Showing());
+        IsOn = true;
+
+        _targetValueInner += targetValueInner;
+        _targetValueOuter += targetValueOuter;
+
+        _coroutine = StartCoroutine(ChangeValue(showTime));
     }
 
-    public void StartHide(float hideTime = -1)
+    public void StartHide(float hideTime = -1, float targetValueInner = -1, float targetValueOuter = -1)
     {
         if (hideTime == -1)
             hideTime = _hideTime;
 
+        if (targetValueInner == -1)
+            targetValueInner = _hideValueInner;
+
+        if (targetValueOuter == -1)
+            targetValueOuter = _hideValueOuter;
+
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
-        _coroutine = StartCoroutine(Hideing(hideTime));
+        IsOn = false;
+
+        _targetValueInner -= targetValueInner;
+        _targetValueOuter -= targetValueOuter;
+
+        _coroutine = StartCoroutine(ChangeValue(hideTime));
     }
 
     public void SetIntensity(float intensity)
@@ -41,38 +68,22 @@ public class PlayerLight : MonoBehaviour
         _light.intensity = intensity;
     }
 
-    private IEnumerator Showing()
+    public void AddForce(float innetAdded, float outerAdded)
     {
-        float startOuter = _light.pointLightOuterRadius;
-        float startInner = _light.pointLightInnerRadius;
-        float time = 0;
-
-        IsOn = true;
-
-        while (_light.pointLightOuterRadius != _showValueOuter || _light.pointLightInnerRadius != _showValueInner)
-        {
-            time += Time.deltaTime;
-            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, _showValueOuter, time / _showTime);
-            _light.pointLightInnerRadius = Mathf.Lerp(startInner, _showValueInner, time / _showTime);
-
-            yield return null;
-        }
+        StartShow(0.1f, innetAdded, outerAdded);
     }
 
-    private IEnumerator Hideing(float hideTime)
+    private IEnumerator ChangeValue(float showTime)
     {
         float startOuter = _light.pointLightOuterRadius;
         float startInner = _light.pointLightInnerRadius;
         float time = 0;
 
-        IsOn = false;
-
-        while (_light.pointLightOuterRadius != _hideValueOuter || _light.pointLightInnerRadius != _hideValueInner)
+        while (_light.pointLightOuterRadius != _targetValueOuter || _light.pointLightInnerRadius != _targetValueInner)
         {
             time += Time.deltaTime;
-
-            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, _hideValueOuter, time / hideTime);
-            _light.pointLightInnerRadius = Mathf.Lerp(startInner, _hideValueInner, time / hideTime);
+            _light.pointLightOuterRadius = Mathf.Lerp(startOuter, _targetValueOuter, time / showTime);
+            _light.pointLightInnerRadius = Mathf.Lerp(startInner, _targetValueInner, time / showTime);
 
             yield return null;
         }
