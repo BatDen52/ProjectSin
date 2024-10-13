@@ -430,6 +430,7 @@ MonoBehaviour:
   _playerAnimator: {fileID: 1971302863}
   _interactableCanvas: {fileID: 1436065503}
   _camera: {fileID: 169480093}
+  _minCameraSize: 4
   _totalTime: 25
   _clickECount: 1
   _pushForce: 1500
@@ -1090,7 +1091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BoundingShape2D: {fileID: 1801958851}
   m_Damping: 0.5
-  m_MaxWindowSize: 0
+  m_MaxWindowSize: 4
 --- !u!224 &218378804 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6277870542417681911, guid: 912283539348c424eb982233c087c82d, type: 3}
@@ -8451,6 +8452,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0cb70cb7599cf4a861c58b3e1c7aea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 1692454011}
+  _grany: {fileID: 880987419}
+  _maxZoomDistance: 16
+  _minZoomDistance: 6
   _text: {fileID: 1824495704}
   _oldPictures:
   - {fileID: 615471327}
@@ -8465,6 +8470,8 @@ MonoBehaviour:
   _hidePicturesTrigger: {fileID: 1192367108}
   _newCameraBorder: {fileID: 893193656}
   _cameraConfiner: {fileID: 169480094}
+  _camera: {fileID: 169480093}
+  _minCameraSize: 4
 --- !u!61 &1693999388
 BoxCollider2D:
   m_ObjectHideFlags: 0

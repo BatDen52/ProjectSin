@@ -38,6 +38,13 @@ public class PlayerLight : MonoBehaviour
 
     public void StartShow(float showTime = -1, float targetValueInner = -1, float targetValueOuter = -1)
     {
+        if (_coroutine != null)
+        {
+            _light.pointLightOuterRadius = TargetValueOuter;
+            _light.pointLightInnerRadius = TargetValueInner;
+            StopCoroutine(_coroutine);
+        }
+
         if (showTime == -1)
             showTime = _showTime;
 
@@ -46,9 +53,6 @@ public class PlayerLight : MonoBehaviour
 
         if (targetValueOuter == -1)
             targetValueOuter = _showValueOuter;
-
-        if (_coroutine != null)
-            StopCoroutine(_coroutine);
 
         IsOn = true;
 
@@ -60,6 +64,13 @@ public class PlayerLight : MonoBehaviour
 
     public void StartHide(float hideTime = -1, float targetValueInner = -1, float targetValueOuter = -1)
     {
+        if (_coroutine != null)
+        {
+            _light.pointLightOuterRadius = TargetValueOuter;
+            _light.pointLightInnerRadius = TargetValueInner;
+            StopCoroutine(_coroutine);
+        }
+        
         if (hideTime == -1)
             hideTime = _hideTime;
 
@@ -68,9 +79,6 @@ public class PlayerLight : MonoBehaviour
 
         if (targetValueOuter == -1)
             targetValueOuter = TargetValueOuter - _hideValueOuter;
-
-        if (_coroutine != null)
-            StopCoroutine(_coroutine);
 
         IsOn = false;
 

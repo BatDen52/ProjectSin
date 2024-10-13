@@ -11,6 +11,7 @@ public class GranyAttackTrigger : MonoBehaviour
     [SerializeField] private PlayerAnimator _playerAnimator;
     [SerializeField] private Canvas _interactableCanvas;
     [SerializeField] private CinemachineVirtualCamera _camera;
+    [SerializeField] private float _minCameraSize = 3;
 
     [Header("Timer")]
     //[SerializeField] private int _step = 1;
@@ -22,7 +23,14 @@ public class GranyAttackTrigger : MonoBehaviour
 
     private float _currentTime = 0;
     private int _currentClicks = 0;
-    private Coroutine _coroutine;
+    private Coroutine _coroutine; 
+
+    private float _cameraSize;
+
+    private void Awake()
+    {
+        _cameraSize = _camera.m_Lens.OrthographicSize;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,9 +52,13 @@ public class GranyAttackTrigger : MonoBehaviour
         _playerLight.GetComponent<Mover>().SlowDown(_totalTime);
         _playerLight.StartHide(_totalTime);
 
+        _camera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
+        _camera.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = null;
+
         while (_currentTime < _totalTime)
         {
             _currentTime += Time.deltaTime;
+            _camera.m_Lens.OrthographicSize = Mathf.Lerp(_cameraSize, _minCameraSize, _currentTime / _totalTime);
             yield return null;
         }
 
@@ -66,7 +78,17 @@ public class GranyAttackTrigger : MonoBehaviour
 
         _playerLight.AddForce(3, 5);
 
-        yield return new WaitForSeconds(1.5f);
+        float pauseTime = 0.7f;
+        _currentTime = 0;
+
+        while (_currentTime < pauseTime)
+        {
+            _currentTime += Time.deltaTime;
+            _camera.m_Lens.OrthographicSize = Mathf.Lerp(_minCameraSize, _cameraSize, _currentTime / pauseTime);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1f);
 
         //CameraFollower.Instance.StopFollow();
         _camera.m_Follow = null;
