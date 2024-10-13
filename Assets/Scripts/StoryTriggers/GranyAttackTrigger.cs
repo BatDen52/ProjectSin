@@ -41,6 +41,7 @@ public class GranyAttackTrigger : MonoBehaviour
 
     private IEnumerator CountTime()
     {
+        _playerLight.GetComponent<Mover>().SlowDown(_totalTime);
         _playerLight.StartHide(_totalTime);
 
         while (_currentTime < _totalTime)
@@ -63,7 +64,7 @@ public class GranyAttackTrigger : MonoBehaviour
 
         _granySpawner.PushAll(_playerLight.transform.position, _pushForce);
 
-        _playerLight.StartShow();
+        _playerLight.AddForce(3, 5);
 
         yield return new WaitForSeconds(1.5f);
 

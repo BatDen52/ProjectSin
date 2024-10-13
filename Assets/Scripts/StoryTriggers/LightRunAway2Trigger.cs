@@ -49,11 +49,12 @@ public class LightRunAway2Trigger : MonoBehaviour
 
     private void OnCollected()
     {
+        _playerLight.AddForce(2, 2);
         _light.Collected -= OnCollected;
-       // _platform1Container.SetActive(false);
+        // _platform1Container.SetActive(false);
 
-        foreach (var wall in _walls)
-            wall.SetActive(false);
+        //foreach (var wall in _walls)
+        //    wall.SetActive(false);
 
         _granyTrigger.gameObject.SetActive(true);
     }

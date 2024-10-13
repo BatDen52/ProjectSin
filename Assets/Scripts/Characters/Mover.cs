@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -30,6 +31,25 @@ public class Mover : MonoBehaviour
     public void Run(Transform target) => Move(target, _runSpeedX);
 
     public void Walk(Transform target) => Move(target, _speedX);
+
+    public void SlowDown(float time)
+    {
+        StartCoroutine(Slowing(time));
+    }
+
+    private IEnumerator Slowing(float slowingTime)
+    {
+        float startSpeed = _speedX;
+        float time = 0;
+
+        while (_speedX != 0)
+        {
+            time += Time.deltaTime;
+            _speedX = Mathf.Lerp(startSpeed, 0, time / slowingTime);
+
+            yield return null;
+        }
+    }
 
     private void Move(Transform target, float speed)
     {

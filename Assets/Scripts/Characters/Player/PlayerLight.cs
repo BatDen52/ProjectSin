@@ -64,10 +64,10 @@ public class PlayerLight : MonoBehaviour
             hideTime = _hideTime;
 
         if (targetValueInner == -1)
-            targetValueInner = _hideValueInner;
+            targetValueInner = TargetValueInner - _hideValueInner;
 
         if (targetValueOuter == -1)
-            targetValueOuter = _hideValueOuter;
+            targetValueOuter = TargetValueOuter - _hideValueOuter;
 
         if (_coroutine != null)
             StopCoroutine(_coroutine);
