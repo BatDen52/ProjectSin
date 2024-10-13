@@ -6,6 +6,7 @@ public static class ConstantsData
     {
         public static readonly int SpeedX = Animator.StringToHash(nameof(SpeedX));
         public static readonly int IsFly = Animator.StringToHash(nameof(IsFly));
+        public static readonly int IsBlack = Animator.StringToHash(nameof(IsBlack));
         public static readonly int IsOn = Animator.StringToHash(nameof(IsOn));
         public static readonly int IsOff = Animator.StringToHash(nameof(IsOff));
         public static readonly int IsWalk = Animator.StringToHash(nameof(IsWalk));

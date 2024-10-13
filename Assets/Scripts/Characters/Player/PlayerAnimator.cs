@@ -15,6 +15,16 @@ public class PlayerAnimator : MonoBehaviour
         _animator.SetTrigger(ConstantsData.AnimatorParameters.IsFly);
     }
 
+    public void SetBlack()
+    {
+        _animator.SetBool(ConstantsData.AnimatorParameters.IsBlack, true);
+    }
+
+    public void SetUnblack()
+    {
+        _animator.SetBool(ConstantsData.AnimatorParameters.IsBlack, false);
+    }
+
     public void SetAttackTrigger()
     {
         _animator.SetTrigger(ConstantsData.AnimatorParameters.IsAttack);

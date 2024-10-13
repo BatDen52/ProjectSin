@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class LightRunAway1Trigger : MonoBehaviour
 {
+    [SerializeField] private PlayerAnimator _animator;
     [SerializeField] private SpriteRenderer _plauerView;
     [SerializeField] private Material _unlitMaterial;
     [SerializeField] private PlayerLight _playerLight;
@@ -33,8 +34,6 @@ public class LightRunAway1Trigger : MonoBehaviour
         foreach (var wall in _walls)
             wall.SetActive(true);
 
-        _plauerView.material = _unlitMaterial;
-
         _granyStartPosition = _uiGrany.position;
         GetComponent<Collider2D>().enabled = false;
         _uiGrany.DOAnchorPos(_granyEndPosition, 1).OnComplete(() => StartCoroutine(RunAway()));
@@ -51,7 +50,11 @@ public class LightRunAway1Trigger : MonoBehaviour
         _uiGrany.DOAnchorPos(_granyStartPosition, 1)
             .OnComplete(() => _platform1Container.SetActive(true));
 
+        _animator.SetBlack();
+
         yield return StartCoroutine(Runing(_light.transform, _soulsLightEndPoint.position, _speedLight));
+
+        _plauerView.material = _unlitMaterial;
 
         _camera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
         _cameraConfiner.m_MaxWindowSize = 10f;
