@@ -2098,11 +2098,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _innetAdded
-      value: 0.03
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _outerAdded
-      value: 0.03
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -2515,11 +2515,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _innetAdded
-      value: 0.03
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _outerAdded
-      value: 0.03
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -3249,11 +3249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _innetAdded
-      value: 0.03
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _outerAdded
-      value: 0.03
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -3817,11 +3817,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _innetAdded
-      value: 0.03
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _outerAdded
-      value: 0.03
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -6642,11 +6642,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _innetAdded
-      value: 0.03
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _outerAdded
-      value: 0.03
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -6898,11 +6898,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _innetAdded
-      value: 0.03
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _outerAdded
-      value: 0.03
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -8592,11 +8592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _innetAdded
-      value: 0.03
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _outerAdded
-      value: 0.03
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapeLightFalloffSize
@@ -10794,11 +10794,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _innetAdded
-      value: 0.03
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _outerAdded
-      value: 0.03
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_ShapePath.Array.size
@@ -11588,11 +11588,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _innetAdded
-      value: 0.03
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7096216568545525708, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: _outerAdded
-      value: 0.03
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7603337876679326316, guid: bc87d1f207d3c1445a8112404a9b66ed, type: 3}
       propertyPath: m_Intensity
@@ -12089,12 +12089,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 243956436718413250, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
+      propertyPath: _maxValueInner
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 243956436718413250, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
+      propertyPath: _maxValueOuter
+      value: 4.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 243956436718413250, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
       propertyPath: _hideValueOuter
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 243956436718413250, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
+      propertyPath: _showValueInner
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 243956436718413250, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
       propertyPath: _showValueOuter
-      value: 3.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1705275939432800965, guid: 25fee3bc7a0c5d248a14b8ecf985668d, type: 3}
       propertyPath: _audioManager
