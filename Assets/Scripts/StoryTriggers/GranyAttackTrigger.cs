@@ -1,3 +1,4 @@
+using Cinemachine;
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class GranyAttackTrigger : MonoBehaviour
     [SerializeField] private PlayerLight _playerLight;
     [SerializeField] private PlayerAnimator _playerAnimator;
     [SerializeField] private Canvas _interactableCanvas;
+    [SerializeField] private CinemachineVirtualCamera _camera;
 
     [Header("Timer")]
     //[SerializeField] private int _step = 1;
@@ -65,7 +67,8 @@ public class GranyAttackTrigger : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
-        CameraFollower.Instance.StopFollow();
+        //CameraFollower.Instance.StopFollow();
+        _camera.m_Follow = null;
         _playerAnimator.SetFly();
         _playerAnimator.GetComponent<Rigidbody2D>().gravityScale = 0;
         _playerAnimator.transform.DOMove(_playerAnimator.transform.position + Vector3.up * 20, 2);

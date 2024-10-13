@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -7,6 +8,8 @@ public class Grany1Trigger : MonoBehaviour
     [SerializeField] private LithingZone[] _oldPictures;
     [SerializeField] private LithingZone[] _newPictures;
     [SerializeField] private HidePicturesTrigger _hidePicturesTrigger;
+    [SerializeField] private Collider2D _newCameraBorder;
+    [SerializeField] private CinemachineConfiner2D _cameraConfiner;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,5 +24,7 @@ public class Grany1Trigger : MonoBehaviour
 
         foreach (var picture in _newPictures)
             picture.gameObject.SetActive(true);
+
+        _cameraConfiner.m_BoundingShape2D = _newCameraBorder; 
     }
 }

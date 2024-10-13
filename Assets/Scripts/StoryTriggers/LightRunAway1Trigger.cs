@@ -1,10 +1,14 @@
+using Cinemachine;
 using DG.Tweening;
 using System;
 using System.Collections;
+using System.Net;
 using UnityEngine;
 
 public class LightRunAway1Trigger : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer _plauerView;
+    [SerializeField] private Material _unlitMaterial;
     [SerializeField] private PlayerLight _playerLight;
     [SerializeField] private SoulsLight _soulsLightPrefab;
     [SerializeField] private Transform _soulsLightEndPoint;
@@ -14,6 +18,9 @@ public class LightRunAway1Trigger : MonoBehaviour
     [SerializeField] private GameObject _platform1Container;
     [SerializeField] private GameObject[] _walls;
     [SerializeField] private LightRunAway2Trigger _lightRunAway2Trigget;
+    [SerializeField] private Collider2D _newCameraBorder;
+    [SerializeField] private CinemachineConfiner2D _cameraConfiner;
+    [SerializeField] private CinemachineVirtualCamera _camera;
 
     private Vector3 _granyStartPosition;
     private SoulsLight _light;
@@ -25,6 +32,8 @@ public class LightRunAway1Trigger : MonoBehaviour
 
         foreach (var wall in _walls)
             wall.SetActive(true);
+
+        _plauerView.material = _unlitMaterial;
 
         _granyStartPosition = _uiGrany.position;
         GetComponent<Collider2D>().enabled = false;
@@ -44,6 +53,10 @@ public class LightRunAway1Trigger : MonoBehaviour
 
         yield return StartCoroutine(Runing(_light.transform, _soulsLightEndPoint.position, _speedLight));
 
+        _camera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
+        _cameraConfiner.m_MaxWindowSize = 10f;
+
+        _cameraConfiner.m_BoundingShape2D = _newCameraBorder;
         _light.GetComponent<Collider2D>().enabled = true;
     }
 

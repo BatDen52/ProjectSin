@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 public class HidePicturesTrigger : MonoBehaviour
@@ -5,6 +6,8 @@ public class HidePicturesTrigger : MonoBehaviour
     [SerializeField] private LithingZone[] _pictures;
     [SerializeField] private LettersFallTrigger _fallTrigger;
     [SerializeField] private GameObject _wall;
+    [SerializeField] private Collider2D _newCameraBorder;
+    [SerializeField] private CinemachineConfiner2D _cameraConfiner;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,5 +20,7 @@ public class HidePicturesTrigger : MonoBehaviour
         _fallTrigger.gameObject.SetActive(true);
         gameObject.SetActive(false);
         _wall.gameObject.SetActive(true);
+
+        _cameraConfiner.m_BoundingShape2D = _newCameraBorder;
     }
 }
