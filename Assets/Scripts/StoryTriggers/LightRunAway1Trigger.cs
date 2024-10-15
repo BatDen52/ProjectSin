@@ -47,9 +47,6 @@ public class LightRunAway1Trigger : MonoBehaviour
 
         _light.GetComponent<Collider2D>().enabled = false;
 
-        _uiGrany.DOAnchorPos(_granyStartPosition, 1)
-            .OnComplete(() => _platform1Container.SetActive(true));
-
         _animator.SetBlack();
 
         _plauerView.material = _unlitMaterial;
@@ -60,6 +57,9 @@ public class LightRunAway1Trigger : MonoBehaviour
         _cameraConfiner.m_BoundingShape2D = _newCameraBorder;
 
         yield return StartCoroutine(Runing(_light.transform, _soulsLightEndPoint.position, _speedLight));
+
+        _uiGrany.DOAnchorPos(_granyStartPosition, 1)
+            .OnComplete(() => _platform1Container.SetActive(true));
 
         _light.GetComponent<Collider2D>().enabled = true;
     }
