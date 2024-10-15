@@ -53,7 +53,7 @@ public class GranyAttackTrigger : MonoBehaviour
         _playerLight.StartHide(_totalTime);
 
         _camera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
-        _camera.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = null;
+        // _camera.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = null;
 
         while (_currentTime < _totalTime)
         {

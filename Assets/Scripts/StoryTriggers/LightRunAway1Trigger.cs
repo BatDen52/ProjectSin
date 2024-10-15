@@ -52,14 +52,15 @@ public class LightRunAway1Trigger : MonoBehaviour
 
         _animator.SetBlack();
 
-        yield return StartCoroutine(Runing(_light.transform, _soulsLightEndPoint.position, _speedLight));
-
         _plauerView.material = _unlitMaterial;
 
         _camera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
         _cameraConfiner.m_MaxWindowSize = 10f;
 
         _cameraConfiner.m_BoundingShape2D = _newCameraBorder;
+
+        yield return StartCoroutine(Runing(_light.transform, _soulsLightEndPoint.position, _speedLight));
+
         _light.GetComponent<Collider2D>().enabled = true;
     }
 
