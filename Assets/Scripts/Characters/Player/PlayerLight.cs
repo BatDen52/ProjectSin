@@ -95,7 +95,7 @@ public class PlayerLight : MonoBehaviour
 
     public void AddForce(float innetAdded, float outerAdded)
     {
-        StartShow(0.1f, innetAdded, outerAdded);
+        StartShow(0.3f, innetAdded, outerAdded);
     }
 
     private IEnumerator ChangeValue(float showTime)
