@@ -3961,10 +3961,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 62.5, y: 10.6}
+    - - {x: 60.5, y: 10.6}
       - {x: 9, y: 10.6}
       - {x: 9, y: -5.3}
-      - {x: 62.5, y: -5.3}
+      - {x: 60.5, y: -5.3}
   m_UseDelaunayMesh: 0
 --- !u!1 &901175360
 GameObject:
@@ -9115,10 +9115,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 60.446705, y: 10.6}
+    - - {x: 60.5, y: 10.6}
       - {x: -57.5, y: 10.6}
       - {x: -57.5, y: -5.3}
-      - {x: 60.4467, y: -5.214446}
+      - {x: 60.5, y: -5.3}
   m_UseDelaunayMesh: 0
 --- !u!1001 &1802395683
 PrefabInstance:
