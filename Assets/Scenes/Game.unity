@@ -8517,11 +8517,13 @@ MonoBehaviour:
   - {fileID: 1291261329}
   - {fileID: 1518278032}
   - {fileID: 1461077839}
+  - {fileID: 489238406}
   _newPictures:
   - {fileID: 856200606}
   - {fileID: 1768044781}
   - {fileID: 754750001}
   - {fileID: 1142976981}
+  - {fileID: 567581231}
   _hidePicturesTrigger: {fileID: 1192367108}
   _newCameraBorder: {fileID: 893193656}
   _cameraConfiner: {fileID: 169480094}
