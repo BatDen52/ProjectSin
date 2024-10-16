@@ -6,11 +6,15 @@ public class AutoPilotTrigger : MonoBehaviour
     [SerializeField] private SpriteRenderer _black;
     [SerializeField] private SpriteRenderer _white;
     [SerializeField] private SpriteRenderer _unlitWhite;
+    [SerializeField] private CanvasGroup _endText;
     [SerializeField] private Camera _camera;
     [SerializeField] private float _endAlpha = 255;
+    [SerializeField] private float _endTextAlpha = 1;
     [SerializeField] private float _time = 5;
     [SerializeField] private float _endCameraSize = 100;
     [SerializeField] private float _endCameraOffsetY = -29;
+    [SerializeField] private float _beforeShowEndTextTimeSec = 120;
+    [SerializeField] private float _showEndTextTimeSec = 5;
 
     private Coroutine _coroutine;
 
@@ -58,6 +62,19 @@ public class AutoPilotTrigger : MonoBehaviour
             _unlitWhite.color = unlitWhiteColor;
             _camera.orthographicSize = Mathf.Lerp(startCameraSize, _endCameraSize, currentTime / _time);
             CameraFollower.Instance.SetOffsetY(Mathf.Lerp(startCameraOffsetY, _endCameraOffsetY, currentTime / _time));
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(_beforeShowEndTextTimeSec);
+
+        currentTime = 0;
+
+        while (currentTime < _showEndTextTimeSec)
+        {
+            currentTime += Time.deltaTime;
+
+            _endText.alpha = Mathf.Lerp(0, _endAlpha, currentTime / _showEndTextTimeSec);
 
             yield return null;
         }
