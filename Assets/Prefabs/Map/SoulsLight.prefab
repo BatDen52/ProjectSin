@@ -102,7 +102,10 @@ MonoBehaviour:
   _isLock: 0
   _lock: {fileID: 0}
   _messageBox: {fileID: 0}
-  _hideSpeed: 1
+  _light: {fileID: 7035345307696707983}
+  _hideTime: 1
+  <InnetAdded>k__BackingField: 1.2
+  <OuterAdded>k__BackingField: 3.5
 --- !u!58 &6946087717283610764
 CircleCollider2D:
   m_ObjectHideFlags: 0

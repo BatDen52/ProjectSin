@@ -162,9 +162,9 @@ public class Player : Character
 
     private void Interact()
     {
-        if ((_interactable as Interactable).TryGetComponent<SoulsLight>(out _))
+        if ((_interactable as Interactable).TryGetComponent(out SoulsLight light))
         {
-            _playerLight.StartShow();
+            _playerLight.AddForce(light.InnetAdded, light.OuterAdded);
         }
 
         _interactable.Interact();
